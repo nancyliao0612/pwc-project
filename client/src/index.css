@@ -44,6 +44,7 @@ input {
   height: 3rem;
   margin: 5px 0;
   text-indent: 10px;
+  background-color: none;
 }
 
 p {
@@ -56,4 +57,57 @@ button {
   border: none;
   padding: 10px 15px;
   color: #fff;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+/* RWD */
+@media only screen and (min-width: 480px) {
+  form {
+    padding: 0 20%;
+  }
+  h1 {
+    margin: 5rem;
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.7rem;
+  }
+  input {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  form {
+    padding: 0 32%;
+  }
+  h1 {
+    margin: 5rem;
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  input {
+    width: 100%;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1.8rem;
+  }
 }

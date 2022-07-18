@@ -9,6 +9,9 @@ const TextField = styled.div`
   span {
     color: var(--theme-color);
   }
+  @media only screen and (min-width: 768px) {
+    margin: 15px 0;
+  }
 `;
 
 export default function Form() {
@@ -34,7 +37,7 @@ export default function Form() {
       console.log(error);
     }
     if (
-      data.taxID ===
+      data.taxID !==
       ("04016004" ||
         "22102494" ||
         "27737101" ||

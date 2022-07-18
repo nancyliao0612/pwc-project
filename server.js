@@ -5,12 +5,25 @@ dotenv.config();
 // db and authenticateUser
 import connectDB from "./db/connect.js";
 
+// for deploy
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+import path from "path";
+import helmet from "helmet";
+import xss from "xss-clean";
+import mongoSanitize from "express-mongo-sanitize";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+
 // router
 import respondents from "./routes/respondents.js";
 
-// middleware
-app.use(express.static("./client/public"));
+// make json data avaliable to us in the controller
 app.use(express.json());
+
+app.use(helmet()); // secure header
+app.use(xss());
+app.use(mongoSanitize()); // prevent MongoDB Operator Injection
 
 app.use("/api/respondents", respondents);
 
